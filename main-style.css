@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* CSS Document */
+
+h1{
+	color:red;
+	text-align:center;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	
+}
+
+p{
+	color:navy;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+}
+
+.trialH2{
+	font-size: 30px;
+	color:#005346;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+}
+
+#trialId{
+	font-size:15px;
+	color:#505CBB;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+}
