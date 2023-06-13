@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Feel your Music</title>
+
+<!--CSS Link-->
+	<link rel="stylesheet" href="main.css">
+	
+<!--Font Awesome Library-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	
+<!--Google Fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;800&family=Outfit:wght@400;900&family=Pathway+Extreme:ital,opsz,wght@0,8..144,400;1,8..144,900&family=Raleway:wght@100;400;700;900&display=swap" rel="stylesheet">
+
+	
+</head>
+
+<body>
+
+<header>
+	<nav>
+    	<div class="hamburger">
+		  <div class="hamburger-line"></div>
+		  <div class="hamburger-line"></div>
+		  <div class="hamburger-line"></div>
+    	</div>
+    <div class="logo">
+		<a href="index.html">
+      		<img src="assets/logo.png" alt="Logo">
+		</a>
+    </div>
+		<div class="buttons">
+		  <button class="nav-button">Music</button>
+		  <button class="nav-button">My Library</button>
+		  <button class="nav-button">Profile</button>
+		  <button class="nav-button"><i class="fas fa-cog"></i></button>
+		</div>
+  	</nav>
+</header>
+	
+<div class="side-panel" id="sidePanel">
+    <div class="side-panel-header">
+        <div class="logo">
+            <a href="index.html" class="logo">
+                <img src="assets/slogan.png" class="slogan" alt="Logo">
+            </a>
+        </div>
+        <button class="close-icon"><i class="fas fa-times"></i></button>
+    </div>
+    <ul>
+        <li><a href="#">Hip Hop</a></li>
+        <li><a href="#">Pop</a></li>
+        <li><a href="#">Country</a></li>
+        <li><a href="#">Jazz</a></li>
+    </ul>
+</div>
+	
+	
+<!--	NEW CODE-->
+<div class="song-list" id="songList">
+	
+	
+	<!--Boxes are added here dynamically using JS-->
+	
+</div>
+	
+	
+	
+	<div class="music-player">
+		
+		
+		<audio id="audio-player" src="music-list/Gavlyn_Self-Love-(feat-Beanz).wav"></audio>
+		
+		<!--Song info and title-->
+			<div class="song-info">
+				
+				<div class="cover-image-container">
+					<img id="cover-image" src="" alt="Cover Image" width="50px">
+				</div>
+				
+				<div class="song-details">
+					<h3 class="song-title"></h3>
+					<p class="song-artist"></p>
+				</div>
+			</div>
+		
+		
+		<!--These are control btns-->
+			<div class="controls">
+				<button id="previous-btn"><i class="fas fa-step-backward"></i></button>
+				<button id="play-btn"><i class="fas fa-play"></i></button>
+				<button id="pause-btn"><i class="fas fa-pause"></i></button>
+				<button id="next-btn"><i class="fas fa-step-forward"></i></button>
+			</div>
+
+			<div class="progress-bar">
+				<div id="progress-bar-inner"></div>
+			</div>
+
+			<div class="volume-control">
+				<input id="volume-slider" class="slider" type="range" min="0" max="1" step="0.01" value="1">
+			</div>
+	
+	
+	</div>
+	
+	
+	
+	
+<!--JavaScript Link-->
+	<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+	<script src="main.js"></script>	
+	
+</body>
+</html>

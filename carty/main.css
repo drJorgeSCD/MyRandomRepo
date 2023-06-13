@@ -1,0 +1,443 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/*This is the player css*/
+
+
+*
+{
+	font-family: 'Outfit';
+	font-weight: 400;
+}
+
+body
+{
+	margin: 0;
+	background-color:#FCFCFC;
+}
+
+.music-player
+{
+	display:flex;
+	background-color: #442314;
+  	position: sticky;
+ 	bottom: 0;
+  	left: 0;
+  	width: 100%;
+  	flex-direction: column;
+  	align-items: center;
+  	gap: 10px;
+  	padding: 2px;
+  	border-radius: 8px;
+  	color: #fff;
+  	z-index: 999;
+  	margin-top: 20px;
+}
+
+.cover-image-container
+{
+	margin-right: 20px;
+}
+
+.cover-image-container img
+{
+	width: 70px;
+	height: 70px;
+	object-fit: cover;
+	padding: 5px;
+}
+
+
+/*This is button styling*/
+
+.controls button 
+{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ff5500;
+    padding: 2px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.controls button:hover 
+{
+    color: #fff;
+    background-color: #ff5500;
+}
+
+
+
+
+/* progress bar styling*/
+
+.progress-bar 
+{
+  	width: 80%;
+  	height: 5px;
+  	background-color: #C2C2C2;
+  	position: relative;
+  	overflow: hidden;
+  	cursor: pointer;
+	transition: height 0.3s ease;
+}
+
+.progress-bar:hover 
+{
+  	height: 8px;
+}
+
+#progress-bar-inner 
+{
+	height: 100%;
+	background-color: #ff5500;
+	width: 0;
+	transition: width 0.3s ease;
+}
+
+.progress-bar:hover #progress-bar-inner 
+{
+	width: 100%; 
+}
+
+
+
+/*Making buttons take turns*/
+
+i.fa-play, .fa-pause, .fa-step-backward, .fa-step-forward
+{
+	font-family: "Font Awesome 5 Free";
+}
+
+#play-btn
+{
+	display: inline-block;
+}
+
+#pause-btn
+{
+	display: none;
+}
+
+
+
+
+/*Song information code*/
+
+.song-info 
+{
+  	display: flex;
+  	align-items: center;
+}
+
+.song-image {
+  	width: 40px;
+  	height: 100%;
+  	margin-left: 10px;
+}
+
+.song-image img 
+{
+  	width: 100%;
+  	height: 100%;
+  	object-fit: cover;
+  	border-radius: 4px;
+}
+
+.song-details 
+{
+  	margin-left: 10px;
+}
+
+.song-title 
+{
+  	margin: 0;
+  	font-size: 20px;
+}
+
+.song-artist 
+{
+  	margin: 0;
+  	font-size: 14px;
+  	color: #ccc;
+}
+
+
+
+/*This is the navigation bar*/
+
+header 
+{
+  	background-color: #442314;
+  	color: #fff;
+  	padding: 10px 20px;
+}
+
+nav 
+{
+  	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+}
+
+.logo
+{
+	display: flex;
+  	align-items: center;
+}
+
+.logo img 
+{
+  	display:block;
+	margin: 0 auto;
+	width: 60px;
+}
+
+.hamburger 
+{
+  	width: 30px;
+  	height: 20px;
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+  	align-items: flex-start;
+  	cursor: pointer;
+}
+
+.hamburger-line 
+{
+	width: 100%;
+	height: 2px;
+	background-color: #fff;
+	margin-bottom: 4px;
+}
+
+.buttons 
+{
+	display: flex;
+	align-items: center;
+}
+
+.nav-button 
+{
+	background-color: transparent;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.nav-button i 
+{
+	font-size: 16px;
+}
+
+
+
+
+/*ANIMATIONS*/
+
+/*	Navigation bar hover animation*/
+.nav-button 
+
+{
+	position: relative;
+	overflow: hidden;
+}
+
+.nav-button::before 
+
+{
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #ff5500;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.7s ease;
+}
+
+.nav-button:hover::before 
+{
+	transform: scaleX(1);
+}
+
+
+
+
+/*	Side panel animation*/
+
+.side-panel 
+{
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #442314;
+    color: #fff;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+.side-panel ul 
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+}
+
+.side-panel ul li 
+{
+    margin-bottom: 10px;
+}
+
+.side-panel ul li a 
+{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.side-panel ul li a:hover 
+{
+    color: #ff5500;
+}
+
+.side-panel.active 
+{
+    left: 0;
+}
+
+.side-panel-header 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.close-icon 
+{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.close-icon i 
+{
+    font-size: 20px;
+}
+
+.close-icon:hover 
+{
+    color: #ff5500;
+}
+
+.side-panel .logo img 
+{
+ 	width: 175px;
+}
+
+
+
+/*This is responsible for the song boxes*/
+
+
+.song-box 
+{
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.song-box:hover 
+{
+	transform: scale(1.05);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.song-box.active 
+{
+	background-color: #442314;
+	color: #fff;
+	transition: background-color 0.5s ease, color 0.3s ease;
+}
+	
+.song-box:not(.active) 
+{
+	transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+
+.song-box img 
+{
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	border-radius: 4px;
+}
+
+.song-box-info 
+{
+    flex-grow: 1;
+}
+
+.song-box-title 
+{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.song-box-artist 
+{
+    font-size: 16px;
+    color: #898989;
+}
+
+.song-box-play 
+{
+    display: none;
+}
+
+.song-box:hover .song-box-play {
+    display: block;
+}
+
+.song-box-play i 
+{
+    font-size: 20px;
+    color: #ff5500;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
